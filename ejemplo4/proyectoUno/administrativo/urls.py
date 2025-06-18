@@ -8,7 +8,7 @@ from . import views
 
 
 urlpatterns = [
-        path('', views.index, name='index'),
+        #path('', views.index, name='index'),
         path('estudiante/<int:id>', views.obtener_estudiante,
             name='obtener_estudiante'),
         path('crear/estudiante', views.crear_estudiante,
@@ -17,4 +17,17 @@ urlpatterns = [
             name='editar_estudiante'),
         path('eliminar/estudiante/<int:id>', views.eliminar_estudiante,
             name='eliminar_estudiante'),
+
+
+
+
+
+
+
+        path('', views.index_Pais, name='index'),
+        path('crearp', views.crear_Pais, name = 'crearp'),
+
+
+
+            
  ]

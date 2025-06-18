@@ -1,0 +1,11 @@
+<h3>Mis paises</h3>
+<ul>
+    {% for p in pais %}
+    <li>
+        {{p}}
+    </li>
+    {% endfor %}
+</ul>
+
+<br>
+<a href="{% url 'crearp' %}">crear Pais</a>

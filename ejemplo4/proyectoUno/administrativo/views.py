@@ -89,3 +89,30 @@ def eliminar_estudiante(request, id):
     estudiante = Estudiante.objects.get(pk=id)
     estudiante.delete()
     return redirect(index)
+
+
+
+
+
+
+
+
+
+def index_Pais(request):
+    pais = Pais.objects.all() #list(p,p,p)
+    informacion_template = {'pais':pais, 'n_Pais':len(pais)}
+    return render(request,'IndexPais.html',informacion_template)
+
+
+def crear_Pais(request):
+    if request.method == 'POST':
+        formula = PaisForm(request.POST)
+        if formula.is_valid():
+            formula.save()
+            return redirect(index_Pais)
+
+    else: 
+        form = PaisForm()
+    formulario = {'form':form}
+
+    return render(request, 'crearPais.html', formulario)
